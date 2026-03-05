@@ -1,0 +1,199 @@
+body{
+
+margin:0;
+font-family: Arial, Helvetica, sans-serif;
+background-color:#e9e9e9;
+
+}
+
+
+/* CONTENEDOR GENERAL */
+
+.container{
+
+display:flex;
+align-items:stretch;
+padding:30px;
+gap:30px;
+
+}
+
+
+/* SIDEBAR IZQUIERDO */
+
+.sidebar{
+
+width:320px;
+background:white;
+padding:20px;
+height: fit-content;
+
+}
+
+
+/* FOTO */
+
+.foto{
+
+width:100%;
+aspect-ratio: 1 / 1;
+box-sizing: border-box;
+border:15px solid #a58b92;
+background:#dcdcdc;
+margin-bottom:20px;
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.foto img{
+	width:100%;
+	height:100%;
+	object-fit:cover;
+	display:block;
+}
+
+
+/* TEXTO */
+
+.info h2{
+
+margin-top:20px;
+font-style: italic;
+
+}
+
+
+/* LADO DERECHO */
+
+.content{
+
+flex:1;
+
+background:#a58b92;
+
+
+padding:40px;
+
+display:grid;
+
+grid-template-columns: repeat(2, 1fr);
+
+gap:40px 40px;
+align-items:start;
+
+}
+
+
+/* CAJAS */
+
+.card{
+background:white;
+min-height:320px;
+display:block;
+text-decoration:none;
+color:inherit;
+border-radius:6px;
+overflow:hidden;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+box-shadow: 0 0 0 rgba(0,0,0,0);
+transition:transform .18s ease, box-shadow .18s ease;
+}
+
+
+.card .img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.card:hover{transform:translateY(-6px);box-shadow:0 8px 20px rgba(0,0,0,0.08)}
+
+.card .thumb{
+		width:84%;
+		height:200px;
+		background:#ffffff;
+		border:12px solid #c9a9ad;
+		box-sizing:border-box;
+		overflow:hidden;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		}
+
+.card .thumb img{
+	width:100%;
+	height:100%;
+	object-fit:cover;
+	display:block;
+}
+
+.caption{
+		margin-top:12px;
+		color:#222;
+		font-size:14px;
+		text-align:center;
+		width:100%;
+		padding:8px 0;
+}
+
+@media (max-width:900px){
+	.container{flex-direction:column}
+	.sidebar{width:100%}
+	.content{padding:30px; grid-template-columns:1fr}
+	.card{min-height:240px}
+	.card .thumb{height:120px}
+}
+
+/* Project page gallery and description sizing */
+.project-page .gallery{
+	display:flex;
+	gap:18px;
+	overflow-x:auto;
+	padding:12px 6px;
+	scroll-snap-type:x mandatory;
+	-webkit-overflow-scrolling:touch;
+}
+.project-page .gallery .slide{
+	flex:0 0 880px; /* fixed slide width */
+	scroll-snap-align:center;
+	min-width:300px;
+}
+.project-page .gallery .slide img{
+	width:100%;
+	height:420px; /* uniform rectangle height */
+	object-fit:cover;
+	border-radius:6px;
+	display:block;
+    height: fit-content;
+}
+
+/* Make the pink description area larger and more square-like */
+.project-page main > section{
+	min-height:380px;
+	display:flex;
+	flex-direction:column;
+	justify-content:flex-start;
+	padding: 18px 28px;
+	border-radius:8px;
+	color:#fff;
+	background:transparent;
+}
+
+/* Apply the mauve background to the whole project page and ensure full height */
+.project-page{
+  background:#a58b92;
+  min-height:100vh;
+}
+
+@media (max-width:1000px){
+	.project-page .gallery .slide{flex:0 0 92%;}
+	.project-page .gallery .slide img{height:300px}
+	.project-page main > section{min-height:360px}
+}
+
