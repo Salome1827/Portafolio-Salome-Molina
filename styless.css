@@ -150,50 +150,173 @@ transition:transform .18s ease, box-shadow .18s ease;
 	.card .thumb{height:120px}
 }
 
-/* Project page gallery and description sizing */
-.project-page .gallery{
-	display:flex;
-	gap:18px;
-	overflow-x:auto;
-	padding:12px 6px;
-	scroll-snap-type:x mandatory;
-	-webkit-overflow-scrolling:touch;
-}
-.project-page .gallery .slide{
-	flex:0 0 880px; /* fixed slide width */
-	scroll-snap-align:center;
-	min-width:300px;
-}
-.project-page .gallery .slide img{
-	width:100%;
-	height:420px; /* uniform rectangle height */
-	object-fit:cover;
-	border-radius:6px;
-	display:block;
-    height: fit-content;
+/* Project page layout - new vertical layout */
+.project-page main {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 100%;
+	margin: 0 auto;
+	gap: 30px;
+	padding: 30px 0 30px 40px;
 }
 
-/* Make the pink description area larger and more square-like */
-.project-page main > section{
-	min-height:380px;
-	display:flex;
-	flex-direction:column;
-	justify-content:flex-start;
-	padding: 18px 28px;
-	border-radius:8px;
-	color:#fff;
-	background:transparent;
+.project-page-back {
+	align-self: flex-start;
+	margin-left: 100px;
+	margin-bottom: 50px;
+}
+
+.project-page-back a {
+	background: #fff;
+	padding: 10px 20px;
+	border-radius: 6px;
+	text-decoration: none;
+	color: #333;
+	font-size: 15px;
+	display: inline-block;
+	font-weight: 600;
+	transition: all 0.2s ease;
+}
+
+.project-page-back a:hover {
+	background: #f0f0f0;
+	transform: translateY(-2px);
+}
+
+.project-page main > h1 {
+	width: 100%;
+	text-align: center;
+	font-size: 72px;
+	margin: 0;
+	line-height: 1.1;
+	font-weight: bold;
+	letter-spacing: -1px;
+	padding-right: 40px;
+}
+
+.project-page main > section {
+	width: 100%;
+	max-width: 900px;
+	margin: 0 auto;
+	min-height: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 25px 40px;
+	border-radius: 8px;
+	color: #fff;
+	background: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(10px);
+	box-sizing: border-box;
+	text-align: center;
+	margin-right: 40px;
+}
+
+.project-page main > section h2 {
+	display: none;
+}
+
+.project-page main > section p {
+	font-size: 15px;
+	margin: 0;
+	line-height: 1.6;
+	letter-spacing: 0.2px;
+	opacity: 0.9;
+}
+
+.project-page .gallery {
+	width: 100%;
+	display: flex;
+	gap: 30px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	padding: 30px 40px;
+	scroll-snap-type: x mandatory;
+	-webkit-overflow-scrolling: touch;
+	box-sizing: border-box;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.project-page .gallery .slide {
+	flex: 0 0 auto;
+	width: 520px;
+	height: auto;
+	scroll-snap-align: center;
+}
+
+.project-page .gallery .slide img {
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+	border-radius: 12px;
+	display: block;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+	transition: all 0.3s ease;
+	background: white;
+	padding: 0;
+}
+
+.project-page .gallery .slide img:hover {
+	transform: scale(1.03) translateY(-4px);
+	box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
 }
 
 /* Apply the mauve background to the whole project page and ensure full height */
-.project-page{
-  background:#a58b92;
-  min-height:100vh;
+.project-page {
+	background: #a58b92;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
 }
 
-@media (max-width:1000px){
-	.project-page .gallery .slide{flex:0 0 92%;}
-	.project-page .gallery .slide img{height:300px}
-	.project-page main > section{min-height:360px}
+@media (max-width: 1400px) {
+	.project-page .gallery .slide {
+		width: 480px;
+	}
+	.project-page .gallery {
+		padding: 30px 30px;
+	}
+}
+
+@media (max-width: 1000px) {
+	.project-page main > h1 {
+		font-size: 42px;
+	}
+	.project-page .gallery .slide {
+		width: 420px;
+	}
+	.project-page main > section {
+		padding: 20px 30px;
+		max-width: 100%;
+	}
+	.project-page main > section p {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 700px) {
+	.project-page main > h1 {
+		font-size: 32px;
+	}
+	.project-page main {
+		gap: 30px;
+		padding: 20px 15px;
+	}
+	.project-page-back {
+		margin-left: 15px;
+	}
+	.project-page .gallery .slide {
+		width: 300px;
+	}
+	.project-page .gallery {
+		padding: 20px 20px;
+		gap: 20px;
+	}
+	.project-page main > section p {
+		font-size: 13px;
+	}
 }
 

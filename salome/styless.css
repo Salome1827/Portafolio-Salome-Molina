@@ -1,0 +1,85 @@
+body{
+
+margin:0;
+font-family: Arial, Helvetica, sans-serif;
+background-color:#e9e9e9;
+
+}
+
+
+/* CONTENEDOR GENERAL */
+
+.container{
+
+display:flex;
+height:100vh;
+padding:30px;
+gap:30px;
+
+}
+
+
+/* SIDEBAR IZQUIERDO */
+
+.sidebar{
+
+width:320px;
+background:white;
+padding:20px;
+
+}
+
+
+/* FOTO */
+
+.foto{
+
+width:100%;
+height:200px;
+
+border:15px solid #a58b92;
+background:#dcdcdc;
+
+margin-bottom:20px;
+
+}
+
+
+/* TEXTO */
+
+.info h2{
+
+margin-top:20px;
+font-style: italic;
+
+}
+
+
+/* LADO DERECHO */
+
+.content{
+
+flex:1;
+
+background:#a58b92;
+
+padding:40px;
+
+display:grid;
+
+grid-template-columns: repeat(2,1fr);
+
+gap:40px;
+
+}
+
+
+/* CAJAS */
+
+.card{
+
+background:white;
+
+height:160px;
+
+}
