@@ -162,9 +162,10 @@ transition:transform .18s ease, box-shadow .18s ease;
 }
 
 .project-page-back {
-	align-self: flex-start;
-	margin-left: 100px;
-	margin-bottom: 50px;
+	align-self: flex-end;
+	margin-right: 100px;
+	margin-bottom: 100px;
+	margin-top: 50px;
 }
 
 .project-page-back a {
@@ -241,7 +242,7 @@ transition:transform .18s ease, box-shadow .18s ease;
 
 .project-page .gallery .slide {
 	flex: 0 0 auto;
-	width: 520px;
+	width: 600px;
 	height: auto;
 	scroll-snap-align: center;
 }
@@ -274,7 +275,7 @@ transition:transform .18s ease, box-shadow .18s ease;
 
 @media (max-width: 1400px) {
 	.project-page .gallery .slide {
-		width: 480px;
+		width: 540px;
 	}
 	.project-page .gallery {
 		padding: 30px 30px;
@@ -286,7 +287,7 @@ transition:transform .18s ease, box-shadow .18s ease;
 		font-size: 42px;
 	}
 	.project-page .gallery .slide {
-		width: 420px;
+		width: 480px;
 	}
 	.project-page main > section {
 		padding: 20px 30px;
@@ -306,10 +307,10 @@ transition:transform .18s ease, box-shadow .18s ease;
 		padding: 20px 15px;
 	}
 	.project-page-back {
-		margin-left: 15px;
+		margin-right: 15px;
 	}
 	.project-page .gallery .slide {
-		width: 300px;
+		width: 360px;
 	}
 	.project-page .gallery {
 		padding: 20px 20px;
